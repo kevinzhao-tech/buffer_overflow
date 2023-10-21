@@ -1,0 +1,11 @@
+.gdb_history
+victim*
+victim_no_canary*
+victim_no_canary_no_nx*
+a.out
+code.bin
+text.txt
+.vscode
+stack
+payload.txt
+gadgets.txt
