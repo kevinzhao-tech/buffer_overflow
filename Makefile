@@ -1,7 +1,7 @@
 .PHONY = all
 SOURCES = victim.c
 TARGET = victim
-CFLAGS = -Wl,-z,norelro -no-pie
+CFLAGS = 
 NO_CANARY_TARGET = victim_no_canary
 NO_NX_NO_CANARY_TARGET = victim_no_canary_no_nx
 

