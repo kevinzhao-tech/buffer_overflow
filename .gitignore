@@ -1,5 +1,5 @@
 .gdb_history
-victim*
+victim
 victim_no_canary*
 victim_no_canary_no_nx*
 a.out
